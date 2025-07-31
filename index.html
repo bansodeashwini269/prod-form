@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script> (function (w, d, s, u) {let j = d.createElement(s); j.async = true; j.src ="https://dev-assets.channelboost.com/scripts/embeddingwidget.js?uid=" +u; let f = d.getElementsByTagName(s)[0]; f.parentNode.insertBefore(j, f);})(window, document, "script", "45112da1-b6c3-4699-a718-ad409c929b92");</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .signup-box {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    .signup-box h2 {
+      margin-bottom: 20px;
+    }
+
+    .signup-box form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .signup-box input {
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .signup-box button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .signup-box button:hover {
+      background-color: #218838;
+    }
+
+    .signup-box p {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .signup-box a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    .signup-box a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-box">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="firstName" placeholder="First Name" />
+      <input type="text" id="lastName" placeholder="Last Name" />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="companyName" placeholder="Company Name" />
+      <button type="submit">Create Account</button>
+    </form>
+    <p>Already have an account? <a href="#">Login here</a></p>
+  </div>
+
+  <script>
+    // Mock global object for demo
+    
+    // Handle form submission
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = {
+        firstName: document.getElementById("firstName").value.trim(),
+        lastName: document.getElementById("lastName").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        companyName: document.getElementById("companyName").value.trim()
+      };
+
+      // Call tracking function
+      trackify.trackLead(formData);
+
+      // Optionally reset the form
+      this.reset();
+    });
+  </script>
+</body>
+</html>
